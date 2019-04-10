@@ -5,5 +5,5 @@ Route::get('/', function () {
 });
 
 Route::get('/admin', function () {
-    return view('welcome');
+    return view('admin.layouts.layout');
 });
