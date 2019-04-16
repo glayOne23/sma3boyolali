@@ -7,22 +7,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>@yield('title') </title>
+    <title>@yield('title')</title>
 
     <!-- Bootstrap -->
-    <link href="gentelella/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/gentelella/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="gentelella/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/gentelella/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="gentelella/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link href="/gentelella/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- jQuery custom content scroller -->
-    <link href="gentelella/vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+    <link href="/gentelella/vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
 
+     <!-- iCheck-->
+    <link href="/gentelella/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+    <!-- Dropzone.js -->
+    <link href="/gentelella/vendors/dropzone/dist/min/dropzone.min.css" rel="stylesheet">
+    <script src="/gentelella/vendors/dropzone/dist/min/dropzone.min.js"></script>
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script> --}}
+
+    <!-- jQuery -->
+    <script src="/gentelella/vendors/jquery/dist/jquery.min.js"></script>
+    
     <!-- Custom Theme Style -->
-    <link href="gentelella/build/css/custom.min.css" rel="stylesheet">
+    <link href="/gentelella/build/css/custom.css" rel="stylesheet">
   </head>
 
-  <body class="nav-md footer_fixed">
+  <body class="nav-md">
     <div class="container body">
       <div class="main_container">
 
@@ -33,11 +45,7 @@
         <!-- page content -->
         <div class="right_col" role="main">
           <div class="">
-            <div class="page-title">
-              <div class="title_left">
-                <h3>Fixed Footer <small> Just add class <strong>footer_fixed</strong></small></h3>
-              </div>
-            </div>
+            @yield('content')
           </div>
         </div>
         <!-- /page content -->
@@ -48,17 +56,18 @@
     </div>
 
     <!-- jQuery -->
-    <script src="gentelella/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="/gentelella/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
-    <script src="gentelella/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/gentelella/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- FastClick -->
-    <script src="gentelella/vendors/fastclick/lib/fastclick.js"></script>
+    <script src="/gentelella/vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
-    <script src="gentelella/vendors/nprogress/nprogress.js"></script>
+    <script src="/gentelella/vendors/nprogress/nprogress.js"></script>
     <!-- jQuery custom content scroller -->
-    <script src="gentelella/vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
-
+    <script src="/gentelella/vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- iCheck -->
+    <script src="/gentelella/vendors/iCheck/icheck.min.js"></script>
     <!-- Custom Theme Scripts -->
-    <script src="gentelella/build/js/custom.min.js"></script>
+    <script src="/gentelella/build/js/custom.js"></script>
   </body>
 </html>

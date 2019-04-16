@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateHomeImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('home_images', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name')->unique();
-            $table->string('password');
-            $table->tinyInteger('role');
+            $table->string('name');
             $table->timestamps();
+
+            // foregn key home    
+            $table->unsignedBigInteger('home_id');
+            $table->foreign('home_id')->references('id')->on('homes')->onDelete('cascade');
         });
     }
 
@@ -29,6 +31,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('home_images');
     }
 }
