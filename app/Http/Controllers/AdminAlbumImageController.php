@@ -2,30 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Home;
-use App\Models\HomeImage;
+use App\Models\Album;
+use App\Models\AlbumImage;
 use Illuminate\Http\Request;
 
-class AdminSlideshowController extends Controller
+class AdminAlbumImageController extends Controller
 {
-    
-    public function create()
-    {
-        return view('admin.slideshow.create');
+
+    public function create(Album $album){
+        return view('admin.album_images.create', compact('album'));
     }
 
-    
-    public function store(Request $request)
+    // public function store(AlbumImage $album_images){
+    //     dd('store');
+    // }
+
+    public function store(Album $album, Request $request)
     {
+        // dd($album->name);
         $image = $request->file('file');
         $ldate = date('Y-m-d_H:i:s');
         $imageName = $ldate.'_'.$image->getClientOriginalName();
         $image->move(public_path('images'),$imageName);
      
-        $home = Home::select('id')->where('name', 'Slideshow')->first();
-        $home_image = HomeImage::create([
+        $album_image = AlbumImage::create([
             'name' => $imageName,
-            'home_id' => $home->id,
+            'album_id' => $album->id,
         ]);
 
         return response()->json(['success'=>$imageName]);
@@ -33,11 +35,11 @@ class AdminSlideshowController extends Controller
 
     public function destroy(Request $request)
     {
-        
+        // dd($request->input('table_records'));    
         foreach ($request->input('table_records') as $value) {
             $this->deleteImage($value);        
 
-            HomeImage::findOrFail($value)->delete();
+            AlbumImage::findOrFail($value)->delete();
         }
         return back();
     }
@@ -45,7 +47,7 @@ class AdminSlideshowController extends Controller
     
     //helper
     public function deleteImage($id){
-        $getImage = HomeImage::where('id', $id)->first();
+        $getImage = AlbumImage::findOrFail($id);
         $imageName = $getImage->name;
         $image_path = "images/".$imageName; 
         if (file_exists($image_path)) {

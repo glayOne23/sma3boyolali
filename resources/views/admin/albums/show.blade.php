@@ -1,8 +1,9 @@
 @extends('admin.layouts.layout')
 
-@section('title', 'Halaman Utama')
+@section('title', 'Isi Album')
 
 @section('content')
+    {{-- {{dd($album->album_images)}} --}}
     {{-- Slideshow --}}
     <div class="clearfix"></div>
     <div class="row">
@@ -10,16 +11,18 @@
         <div class="x_panel">
           <div class="x_title">
 
-            <h4>Slideshow Halaman Utama</h4>
+          <h4>Gambar-gambar untuk Album {{$album->name}}</h4>
             <div class="clearfix"></div>
           </div>
           <div class="x_content">
             
-            <a href="/admin/slideshows/create/">
+            {{-- add image to album --}}
+            <a href="/admin/albums/{{$album->id}}/images/create">
               <button type="button" class="btn btn-primary"> <i class="fa fa-plus"></i> Tambah Gambar</button>
             </a>
+
             {{-- table --}}
-            <form action="/admin/slideshows/delete" method="POST">
+            <form action="/admin/albums/{{$album->id}}/images/delete" method="POST">
               @csrf
               @method('DELETE')
             
@@ -40,15 +43,15 @@
                   </thead>
 
                   <tbody>
-                    @foreach ($slideshows as $no => $slideshow)
+                    @foreach ($album->album_images as $no => $album_image)
                     <tr class="even pointer">
                       <td class="a-center ">
-                        <input type="checkbox" class="flat" name="table_records[]" value="{{$slideshow->id}}">
+                        <input type="checkbox" class="flat" name="table_records[]" value="{{$album_image->id}}">
                       </td>
                       <td class=" ">{{$no + 1}} </td>
-                      <td class=" ">{{$slideshow->name}} </td>
+                      <td class=" ">{{$album_image->name}} </td>
                       <td class=" ">
-                        <img src="/images/{{$slideshow->name}}" alt="{{$slideshow->name}}" style="max-width:7em;">
+                        <img src="/images/{{$album_image->name}}" alt="{{$album_image->name}}" style="max-width:7em;">
                       </td>
                     </tr>    
                     @endforeach
@@ -65,35 +68,6 @@
     </div>
     {{-- end Slideshow --}}
 
-    {{-- Headmaster --}}
-    <div class="clearfix"></div>
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="x_panel">
-          <div class="x_title">
-            <h4>Sambutan Kepala Sekolah</h4>
-            <div class="clearfix"></div>
-          </div>
-          <div class="x_content">
-            <form action="/admin/headmaster" method="POST" enctype="multipart/form-data">
-              @csrf
-              @method('PUT')
-
-              <p>Ubah Foto Kepala Sekolah</p>
-              <img src="images/{{$kepsek->name}}" alt="foto kepala sekolah" id="upload_image" style="max-width:9em; max-height:12em;padding-bottom:10px;">
-              @if ($errors->has('file'))
-                  <p style="color:red">{{$errors->first('file')}} </p>
-              @endif
-              <input type="file" onchange="show_image.call(this)" name="file">
-              <textarea class="resizable_textarea form-control" name="content" placeholder="Sambutan Kepala Sekolah...." style="margin-top:1em; margin-bottom:1em;">{{$headmaster->content}}</textarea>
-              <button type="submit" class="btn btn-success"> <i class="fa fa-pencil"></i> Ubah</button>
-            </form>
-          </div>  
-        </div>
-      </div>
-    </div>
-    {{-- end Head Master --}}    
-    
     <script>
       $(document).ready(function(){
 

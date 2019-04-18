@@ -11,10 +11,10 @@ class AdminHeadmasterController extends Controller
     public function update(Request $request)
     {
         $errors = $request->validate([
-            'file' => 'mimes:jpeg,jpg,png,svg',
+            'file' => 'mimes:jpeg,jpg,png,svg | max:4096',
         ]);  
 
-        //getting home_id where name name = Kepsek
+        //getting image where home_id = Kepsek
         $headmaster = Home::select('id')->where('name', 'Kepsek')->first();
         $kepsek = HomeImage::where('home_id', $headmaster->id)->first();
 

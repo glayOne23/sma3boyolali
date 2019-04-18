@@ -9,14 +9,14 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2>Tambah Gambar Slideshow</h2>
+                <h2>Tambah Gambar Untuk Album {{$album->name}}</h2>
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
                 <p>Drag gambar untuk mengupload</p>
-                <form method="POST" action="/admin/slideshows" class="dropzone" id="dropzone" enctype="multipart/form-data">
+                <form method="POST" action="/admin/albums/{{$album->id}}/images" class="dropzone" id="dropzone" enctype="multipart/form-data">
                     @csrf    
-                {{-- <form method="POST" action="{{route('slideshows.store')}} " enctype="multipart/form-data">    
+                {{-- <form method="POST" action="/admin/albums/{{$album->id}}/images" enctype="multipart/form-data">    
                     @csrf
                     <input type="file" name="file">
                     <input type="submit">          --}}
@@ -25,7 +25,7 @@
         </div>
         <center>
             <p>Gambar akan otomatis terupload jika sudah terlihat, klik tombol kembali untuk menuju menu sebelumnya</p>
-            <a href="/admin">
+            <a href="/admin/albums/{{$album->id}} ">
                 <button type="submit" class="btn btn-primary">Kembali</button>
             </a>
         </center>
