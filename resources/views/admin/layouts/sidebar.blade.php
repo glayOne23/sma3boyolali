@@ -26,9 +26,9 @@
         <div class="menu_section">
           <h3>Admin</h3>
           <ul class="nav side-menu">
-            <li><a href="/admin"><i class="fa fa-home"></i>Halaman Utama</a>
-              <li><a href="/admin/albums"><i class="fa fa-book"></i>Album</a>
-            </li>
+            <li><a href="/admin"><i class="fa fa-home"></i>Halaman Utama</a></li>
+            <li><a href="/admin/visions"><i class="fa fa-eye"></i>Visi Misi</a></li>
+            <li><a href="/admin/albums"><i class="fa fa-book"></i>Album</a></li>
             <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
                 <li><a href="form.html">General Form</a></li>

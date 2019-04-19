@@ -25,3 +25,6 @@ Route::get('admin/albums/{album}/images/create', 'AdminAlbumImageController@crea
 Route::post('admin/albums/{album}/images', 'AdminAlbumImageController@store');
 Route::delete('/admin/albums/{album}/images/delete','AdminAlbumImageController@destroy');
 
+//vision
+Route::get('admin/visions', 'AdminVisionController@index');
+Route::put('admin/visions', 'AdminVisionController@update');

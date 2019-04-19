@@ -17,21 +17,17 @@
     <link href="/gentelella/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- jQuery custom content scroller -->
     <link href="/gentelella/vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
-
      <!-- iCheck-->
     <link href="/gentelella/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-
     <!-- Dropzone.js -->
     <link href="/gentelella/vendors/dropzone/dist/min/dropzone.min.css" rel="stylesheet">
     <script src="/gentelella/vendors/dropzone/dist/min/dropzone.min.js"></script>
-    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script> --}}
-
     <!-- jQuery -->
     <script src="/gentelella/vendors/jquery/dist/jquery.min.js"></script>
-    
     <!-- Custom Theme Style -->
     <link href="/gentelella/build/css/custom.css" rel="stylesheet">
+    <!-- bootstrap-wysiwyg -->
+    <link href="/gentelella/vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -67,6 +63,10 @@
     <script src="/gentelella/vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
     <!-- iCheck -->
     <script src="/gentelella/vendors/iCheck/icheck.min.js"></script>
+    <!-- bootstrap-wysiwyg -->
+    <script src="/gentelella/vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+    <script src="/gentelella/vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+    <script src="/gentelella/vendors/google-code-prettify/src/prettify.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="/gentelella/build/js/custom.js"></script>
   </body>
