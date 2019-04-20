@@ -25,7 +25,7 @@ class AdminAlbumController extends Controller
     public function store(Request $request)
     {
         $errors = $request->validate([
-            'name' => 'required',
+            'name' => 'required|unique:albums,name',
             'file' => 'required | mimes:jpeg,jpg,png,svg | max:4096',
         ]);
         
@@ -92,9 +92,7 @@ class AdminAlbumController extends Controller
             ]);
         }
 
-        $album->update([
-            'name' => request('name'),
-        ]);  
+        
         
         return redirect('admin/albums');
     }
