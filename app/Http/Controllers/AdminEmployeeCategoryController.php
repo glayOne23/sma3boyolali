@@ -37,7 +37,7 @@ class AdminEmployeeCategoryController extends Controller
     
     public function show(EmployeeCategory $employee_category)
     {
-        dd('lihat');
+        abort(404);
     }
 
 

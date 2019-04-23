@@ -24,7 +24,7 @@
                   <tr class="headings">
                     <th class="column-title">No </th>
                     <th class="column-title">Nama</th>
-                    <th class="column-title">Daftar Karyawan yang Menjabat</th>
+                    {{-- <th class="column-title">Daftar Karyawan yang Menjabat</th> --}}
                     <th class="column-title">Konfigurasi</th>
                   </tr>
                 </thead>
@@ -34,12 +34,12 @@
                     <tr class="even pointer">
                         <td class=" "> {{$no + 1}} </td>
                         <td class=" ">{{$employee_category->name}} </td>
-                        <td class="">
+                        {{-- <td class="">
                           <a href="{{ route('employee_categories.show',['employee_category' => $employee_category->id]) }} ">
                             <button type="button" class="btn btn-info btn-xs"><i class="fa fa-folder"></i>  Lihat Data Karyawan </button>
                           </a>
                           <br/>
-                        </td>
+                        </td> --}}
                         <td class=" ">
                           
                           <a href="{{ route( 'employee_categories.edit', ['employee_category' => $employee_category->id] ) }}">

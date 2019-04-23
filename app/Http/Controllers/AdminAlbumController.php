@@ -43,23 +43,13 @@ class AdminAlbumController extends Controller
         return redirect('admin/albums');    
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show(Album $album)
     {
         return view('admin.albums.show', compact('album'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit(Album $album)
     {
         return view('admin.albums.edit', compact('album') );
@@ -92,8 +82,10 @@ class AdminAlbumController extends Controller
             ]);
         }
 
-        
-        
+        $album->update([
+            'name' => request('name'),
+        ]);
+
         return redirect('admin/albums');
     }
 

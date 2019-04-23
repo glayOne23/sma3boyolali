@@ -29,5 +29,9 @@ Route::get('admin/albums/{album}/images/create', 'AdminAlbumImageController@crea
 Route::post('admin/albums/{album}/images', 'AdminAlbumImageController@store');
 Route::delete('/admin/albums/{album}/images/delete','AdminAlbumImageController@destroy');
 
-//teacher categories
+//employees
+Route::resource('/admin/employees','AdminEmployeeController');
+Route::delete('/admin/employees', ['as'=>'employees.destroy', 'uses'=>'AdminEmployeeController@destroy']);
+//employee_categories
 Route::resource('/admin/employee_categories','AdminEmployeeCategoryController');
+

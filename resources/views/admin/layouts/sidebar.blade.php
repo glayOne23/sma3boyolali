@@ -33,6 +33,7 @@
             
             <li><a><i class="fa fa-users"></i> Karyawan <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
+                  <li><a href="/admin/employees">Data Karyawan</a></li>
                 <li><a href="/admin/employee_categories">Kategori Karyawan</a></li>
               </ul>
             </li>
