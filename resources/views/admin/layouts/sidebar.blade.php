@@ -49,6 +49,7 @@
           <ul class="nav side-menu">
             <li><a href=" {{route('homes.index')}} "><i class="fa fa-home"></i>Tambah Home</a></li>
             {{-- <li><a href=" /admin/homes "><i class="fa fa-home"></i>Tambah Home</a></li> --}}
+            <li><a href=" {{route('users.index')}} "><i class="fa fa-user"></i>Users</a></li>
           </ul>
         </div>
         {{-- end Super Admin --}}

@@ -4,8 +4,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//users
+Route::resource('/admin/users','AdminUserController');
+
+//main
 Route::get('/admin', 'AdminMainController@index');
 
+//super_admin
 Route::resource('/admin/homes','AdminHomeController');
 
 //slideshows routes
