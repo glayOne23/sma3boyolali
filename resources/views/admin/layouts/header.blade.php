@@ -13,7 +13,7 @@
               <span class=" fa fa-angle-down"></span>
             </a>
             <ul class="dropdown-menu dropdown-usermenu pull-right">
-              <li><a href="/admin/users/{{Auth::user()->id}}/edit"> Ubah User</a></li>
+              <li><a href="/admin/users/{{Auth::user()->id}}/edit"> Ubah Profil</a></li>
               <li>
                 <a href="{{ route('logout') }}" 
                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

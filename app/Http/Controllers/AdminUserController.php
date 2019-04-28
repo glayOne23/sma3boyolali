@@ -11,6 +11,10 @@ class AdminUserController extends Controller
     
     public function index()
     {
+        if (auth()->user()->role !== 2 ) {
+            abort('403');
+        }
+
         $users = User::where('role',1)->get();
         return view('admin.users.index',compact('users') );
     }
@@ -18,12 +22,20 @@ class AdminUserController extends Controller
     
     public function create()
     {
+        if (auth()->user()->role !== 2 ) {
+            abort('403');
+        }
+
         return view('admin.users.create');
     }
 
     
     public function store(Request $request)
     {
+        if (auth()->user()->role !== 2 ) {
+            abort('403');
+        }
+
         $errors = $request->validate([
             'name' => 'required|unique:users,name',
             'file' => 'required|mimes:jpeg,jpg,png,svg | max:4096',
@@ -59,12 +71,20 @@ class AdminUserController extends Controller
     
     public function edit(User $user)
     {
+        if ($user->id !== auth()->id() && auth()->user()->role !== 2 ) {
+            abort('403');
+        }
+
         return view('admin.users.edit', compact('user') );
     }
 
    
     public function update(Request $request, User $user)
     {
+        if ($user->id !== auth()->id() && auth()->user()->role !== 2 ) {
+            abort('403');
+        }
+
         $errors = $request->validate([
             'file' => 'mimes:jpeg,jpg,png,svg | max:4096',
         ]);
@@ -104,14 +124,12 @@ class AdminUserController extends Controller
         return redirect('admin/users');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy(User $user)
     {
+        if ($user->id !== auth()->id() && auth()->user()->role !== 2 ) {
+            abort('403');
+        }
         // delete photo image
         $image_path = "images/".$user->photo; 
         if (file_exists($image_path)) {
