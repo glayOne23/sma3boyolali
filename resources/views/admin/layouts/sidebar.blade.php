@@ -9,11 +9,11 @@
       <!-- menu profile quick info -->
       <div class="profile clearfix">
         <div class="profile_pic">
-          <img src=" {{asset('storage/avatars/img.jpg')}} " alt="..." class="img-circle profile_img">
+          <img src=" /images/{{ Auth::user()->photo }} " alt="..." class="img-circle profile_img">
         </div>
         <div class="profile_info">
           <span>Selamat Datang,</span>
-          <h2>Anto</h2>
+          <h2>{{ Auth::user()->name }}</h2>
         </div>
       </div>
       <!-- /menu profile quick info -->
@@ -58,9 +58,13 @@
 
       <!-- /menu footer buttons -->
       <div class="sidebar-footer hidden-small">
-        <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+        <a data-toggle="tooltip" data-placement="top" title="Logout" href="{{ route('logout') }}" 
+          onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
           <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
         </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+          @csrf
+        </form>
       </div>
       <!-- /menu footer buttons -->
     </div>

@@ -40,3 +40,7 @@ Route::delete('/admin/employees', ['as'=>'employees.destroy', 'uses'=>'AdminEmpl
 //employee_categories
 Route::resource('/admin/employee_categories','AdminEmployeeCategoryController');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

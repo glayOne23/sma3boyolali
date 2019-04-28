@@ -3,6 +3,7 @@
 @section('title', 'Ubah User')
 
 @section('content')
+
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
           <div class="x_title">
@@ -25,8 +26,8 @@
                     @endif
 
                   {{-- password   --}}
-                  <label for="name" style="margin-top:2em;">Password</label>
-                  <input type="password" id="password" class="form-control {{$errors->has('password') ? 'border-red' : ''}}" name="password" value="{{$user->password}}">
+                  <label for="name" style="margin-top:2em;">Password Baru</label>
+                  <input type="password" id="password" class="form-control {{$errors->has('password') ? 'border-red' : ''}}" name="password">
                     @if ($errors->has('password'))
                         <p style="color:red; margin-top:1em">{{$errors->first('password')}} </p>
                     @endif

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminUserController extends Controller
 {
@@ -25,7 +26,7 @@ class AdminUserController extends Controller
     {
         $errors = $request->validate([
             'name' => 'required|unique:users,name',
-            'file' => 'mimes:jpeg,jpg,png,svg | max:4096',
+            'file' => 'required|mimes:jpeg,jpg,png,svg | max:4096',
             'password' =>'required',
         ]);
 
@@ -36,20 +37,16 @@ class AdminUserController extends Controller
             $ldate = date('Y-m-d_H:i:s');
             $imageName = $ldate.'_'.$image->getClientOriginalName();
             $image->move(public_path('images'),$imageName);
+            
+        }
+
+        $album = User::create([
+            'name' => request('name'),
+            'password' => Hash::make(request('password')),
+            'role' => 1,
+            'photo' => $imageName,
+        ]);    
         
-            $album = User::create([
-                'name' => request('name'),
-                'password' => request('password'),
-                'role' => 1,
-                'photo' => $imageName,
-            ]);
-        }else{
-            $album = User::create([
-                'name' => request('name'),
-                'password' => request('password'),
-                'role' => 1,
-            ]);
-        }    
         return redirect('admin/users');
     }
 
@@ -92,10 +89,17 @@ class AdminUserController extends Controller
             ]);
         }
 
-        $user->update([
-            'name' => request('name'),
-            'password' => request('password'),
-        ]);
+        if (request('password') != null) {
+            $user->update([
+                'name' => request('name'),
+                'password' => Hash::make(request('password')),
+            ]);
+        }else {
+            $user->update([
+                'name' => request('name'),
+            ]);
+        }
+        
 
         return redirect('admin/users');
     }
