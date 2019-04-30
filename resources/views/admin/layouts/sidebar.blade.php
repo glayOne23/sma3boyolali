@@ -30,6 +30,8 @@
             <li><a href="/admin"><i class="fa fa-home"></i>Halaman Utama</a></li>
             
             <li><a href="/admin/visions"><i class="fa fa-eye"></i>Visi Misi</a></li>
+
+            <li><a href="/admin/history"><i class="fa fa-history"></i>Sejarah</a></li>
             
             <li><a href="/admin/achievements"><i class="fa fa-trophy"></i>Prestasi</a></li>
 

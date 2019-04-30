@@ -8,12 +8,7 @@ use Gate;
 
 class AdminHomeController extends Controller
 {
-    // public function __construct(){
-    //     if(!Gate::allows('isSuperAdmin')){
-    //         abort(404);
-    //     }
-    // }
-
+    
     public function index()
     {
         if(!Gate::allows('isSuperAdmin')){

@@ -11,6 +11,11 @@ Route::group(['middleware' =>'admin'], function(){
     
     //main
     Route::get('/admin', 'AdminMainController@index');
+
+    //sejarah
+    Route::get('/admin/history', 'AdminHistoryController@index');
+    Route::put('/admin/history', 'AdminHistoryController@update');
+    Route::delete('/admin/history/images/{history_image}', 'AdminHistoryController@destroy');
     
     //super_admin
     Route::resource('/admin/homes','AdminHomeController');
