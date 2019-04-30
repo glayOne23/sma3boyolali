@@ -1,7 +1,7 @@
 <div class="col-md-3 left_col">
     <div class="left_col scroll-view">
       <div class="navbar nav_title" style="border: 0;">
-        <a href="index.html" class="site_title"> <span>Dashboard Admin</span></a>
+        <a href="/admin" class="site_title"> <span>Dashboard Admin</span></a>
       </div>
 
       <div class="clearfix"></div>
@@ -30,6 +30,8 @@
             <li><a href="/admin"><i class="fa fa-home"></i>Halaman Utama</a></li>
             
             <li><a href="/admin/visions"><i class="fa fa-eye"></i>Visi Misi</a></li>
+            
+            <li><a href="/admin/extracurriculars"><i class="fa fa-futbol-o"></i>Ekstrakurikuler</a></li>
             
             <li><a><i class="fa fa-users"></i> Karyawan <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">

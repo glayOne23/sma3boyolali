@@ -6,7 +6,7 @@ Route::get('/', function () {
 
 //users
 Route::group(['middleware' =>'admin'], function(){
-    //
+    //users
     Route::resource('/admin/users','AdminUserController');
     
     //main
@@ -41,6 +41,11 @@ Route::group(['middleware' =>'admin'], function(){
     Route::delete('/admin/employees', ['as'=>'employees.destroy', 'uses'=>'AdminEmployeeController@destroy']);
     //employee_categories
     Route::resource('/admin/employee_categories','AdminEmployeeCategoryController');
+
+    //extracurriculars
+    Route::resource('/admin/extracurriculars','AdminExtracurricularController');
+    //extracurricular_images
+    Route::delete('admin/extracurriculars/{extracurricular}/images/{extracurricular_image}', 'AdminExtracurricularImageController@destroy')->name('extracurricular_image');
     
     Route::get('/home', 'HomeController@index')->name('home');
 });
