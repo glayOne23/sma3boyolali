@@ -1,31 +1,39 @@
 @extends('admin.layouts.layout')
 
-@section('title', 'Ubah Ekstrakurikuler')
+@section('title', 'Ubah Prestasi')
 
 @section('content')
-    <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="x_panel">
-          <div class="x_title">
-            <h4>Ubah Ekstrakurikuler</h4>
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="x_panel">
+    <div class="x_title">
+            <h4>Ubah Prestasi</h4>
             <div class="clearfix"></div>
           </div>
           <div class="x_content">
-
-            <form class="form-horizontal form-label-left" action="{{ route('extracurriculars.update',['extracurricular' => $extracurricular->id]) }}" method="POST" enctype="multipart/form-data">
+            
+            <form class="form-horizontal form-label-left" action="{{ route('achievements.update',['achievement' => $achievement->id]) }}" method="POST" enctype="multipart/form-data">
               @csrf
               @method('PUT')
               <div class="form-group">
                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                   
-                  {{-- nama extracurricular --}}
-                  <label for="name">Nama Ekstrakurikuler</label>
-                  <input type="text" id="name" class="form-control {{$errors->has('name') ? 'border-red' : ''}}" name="name" placeholder="nama ekstrakurikuler..." value="{{$extracurricular->name}}">
-                    @if ($errors->has('name'))
-                        <p style="color:red; margin-top:1em">{{$errors->first('name')}} </p>
-                    @endif
+                  {{-- nama achievement --}}
+                  <label for="name">Judul Prestasi</label>
+                  <input type="text" id="title" class="form-control {{$errors->has('title') ? 'border-red' : ''}}" name="title" placeholder="judul prestasi..." value="{{$achievement->title}}" >
+                  @if ($errors->has('title'))
+                  <p style="color:red; margin-top:1em">{{$errors->first('title')}} </p>
+                  @endif
                   
-                  {{-- deskripsi ekstrakurikuler   --}}
-                  <label for="name" style="margin-top:2em;">Deskripsi Ekstrakurikuler</label>  
+                  {{-- photo achievement   --}}
+                  <label for="upload_image" style="margin-top:2em;">Foto Prestasi</label> <br>
+                  <img src="/images/{{$achievement->photo}}" id="upload_image" style="max-width:9em; max-height:12em;padding-bottom:10px;">
+                  <input type="file" onchange="show_image.call(this)" name="file">  
+                    @if ($errors->has('file'))
+                      <p style="color:red">{{$errors->first('file')}} </p>
+                    @endif
+                    
+                  {{-- Isi Berita   --}}
+                  <label for="achievement" style="margin-top:2em;">Isi Prestasi</label>  
                   <div class="btn-toolbar editor" data-role="editor-toolbar" data-target="#editor-one">
                     <div class="btn-group">
                       <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
@@ -81,7 +89,7 @@
                     </div>
                   </div>
 
-                  <div id="editor-one" class="editor-wrapper"> {!! $extracurricular->content !!} </div>
+                  <div id="editor-one" class="editor-wrapper">{!! $achievement->content !!}</div>
 
                   <textarea name="content" id="content" style="display:none;"></textarea>
                   
@@ -90,62 +98,15 @@
                     <p style="color:red">{{$errors->first('content')}} </p>
                   @endif
 
-                  
-                  <div class="ln_solid"></div>  
-                  
-                  {{-- end deskripsi ekstrakurikuler --}}
-                  <label style="margin-bottom:2em;">Daftar Foto Ekstrakurikuler</label> <br>  
-                    {{-- table --}}
-                    <div class="table-responsive">
-                    {{-- <table class="table jambo_table bulk_action"> --}}
-                      <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action">
-                      <thead>
-                        <tr class="headings">
-                          <th class="column-title">No </th>
-                          <th class="column-title">Gambar</th>
-                          <th class="column-title">Konfigurasi</th>
-                        </tr>
-                      </thead>
-      
-                      <tbody>
-                        @foreach ($extracurricular->extracurricular_images as $no => $extracurricular_image)
-                          <tr class="even pointer">
-                            <td class=" "> {{$no + 1}} </td>
-                              <td class=" ">
-                                <img src="/images/{{$extracurricular_image->name}}" alt="" style="max-width:7em;"> 
-                              </td>
-                              <td class=" ">
-                                <form></form>       
-                                {{-- <form method="POST" action="/admin/extracurriculars/{{$extracurricular->id}}/images/{{$extracurricular_image->id}}"> --}}
-                                <form method="POST" action="{{route('extracurricular_image', ['extracurricular' => $extracurricular->id, 'extracurricular_image' => $extracurricular_image->id ])}} ">
-                                    @csrf
-                                  @method('DELETE')
-                                  <button type="submit" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>  Hapus</button>
-                                </form>
-
-                              </td>
-                            </tr>
-                        @endforeach
-                      </tbody>
-                    </table>
-                  </div>
-                  {{-- end table --}}
-                  
                   <div class="ln_solid"></div>
-                  
-                  {{-- tambah photo extracurricular   --}}
-                  <label for="upload_image">Tambah Foto Ekstrakurikuler</label> <br>
-                  <img id="upload_image" style="max-width:9em; max-height:12em;padding-bottom:10px;">
-                  <input type="file" onchange="show_image.call(this)" name="file">  
-                    @if ($errors->has('file'))
-                      <p style="color:red">{{$errors->first('file')}} </p>
-                    @endif
-                    
-                  <div class="ln_solid"></div>
-                  
 
-                  <center><button type="submit" id="upload_extracurricular" class="btn btn-primary" style="margin-top:1em;"><i class="fa fa-upload"></i>  Upload</button></center>
-                    
+                  {{-- <input type="hidden" name="type" value="berita" > --}}
+
+                  {{-- end isi berita --}}
+                
+                  <center>  
+                    <button type="submit" id="upload_achievement" class="btn btn-primary" style="margin-top:1em;"><i class="fa fa-upload"></i>  Upload</button>  
+                  </center>  
                 </div>
               </div>
             </form>
@@ -169,7 +130,7 @@
     }
   }
 
-  $('#upload_extracurricular').click(function(){
+  $('#upload_achievement').click(function(){
     
     $('#content').html(
         $("#editor-one").html()

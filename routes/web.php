@@ -46,7 +46,13 @@ Route::group(['middleware' =>'admin'], function(){
     Route::resource('/admin/extracurriculars','AdminExtracurricularController');
     //extracurricular_images
     Route::delete('admin/extracurriculars/{extracurricular}/images/{extracurricular_image}', 'AdminExtracurricularImageController@destroy')->name('extracurricular_image');
+
+    //Blog
+    Route::resource('/admin/blogs','AdminBlogController');
+    //Achievement
+    Route::resource('/admin/achievements','AdminAchievementController');
     
+    //interface for slideshow and headmaster
     Route::get('/home', 'HomeController@index')->name('home');
 });
 

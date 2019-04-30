@@ -101,7 +101,7 @@
                       <p style="color:red">{{$errors->first('file')}} </p>
                     @endif
 
-                  <button type="submit" id="upload_extracurricular" class="btn btn-primary" style="margin-top:1em;">Upload</button>  
+                  <button type="submit" id="upload_extracurricular" class="btn btn-primary" style="margin-top:1em;"><i class="fa fa-upload"></i>  Upload</button>  
                     
                 </div>
               </div>

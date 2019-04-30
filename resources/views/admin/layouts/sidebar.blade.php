@@ -31,6 +31,10 @@
             
             <li><a href="/admin/visions"><i class="fa fa-eye"></i>Visi Misi</a></li>
             
+            <li><a href="/admin/achievements"><i class="fa fa-trophy"></i>Prestasi</a></li>
+
+            <li><a href="/admin/blogs"><i class="fa fa-newspaper-o"></i>Berita</a></li>
+
             <li><a href="/admin/extracurriculars"><i class="fa fa-futbol-o"></i>Ekstrakurikuler</a></li>
             
             <li><a><i class="fa fa-users"></i> Karyawan <span class="fa fa-chevron-down"></span></a>
