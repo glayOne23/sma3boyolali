@@ -1,10 +1,33 @@
 <?php
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-//users
+Route::get('/', 'MainController@index');
+
+//galeri
+Route::get('/galeri', 'AlbumController@index');
+Route::get('/galeri/{album}', 'AlbumController@show');
+
+//berita
+Route::get('/berita', 'BlogController@index');
+Route::get('/berita/{blog}', 'BlogController@show');
+
+//sejarah
+Route::get('/sejarah', 'HistoryController@show');
+
+//berita
+Route::get('/prestasi', 'AchievementController@index');
+Route::get('/prestasi/{achievement}', 'AchievementController@show');
+
+//ekstrakurikuler
+Route::get('/ekstrakurikuler/{ekstrakurikuler}', 'ExtracurricularController@show');
+
+//visi-misi
+Route::get('/visi-misi', 'VisionController@show');
+
+//admin
 Route::group(['middleware' =>'admin'], function(){
     //users
     Route::resource('/admin/users','AdminUserController');

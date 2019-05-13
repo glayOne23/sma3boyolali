@@ -17,8 +17,9 @@ class AdminHistoryController extends Controller
 
     public function update(Request $request){
 
+        // dd(request('file'));
         $errors = $request->validate([
-            'file' => 'mimes:jpeg,jpg,png,svg | max:4096',
+            'file' => 'mimes:jpeg,jpg,png,svg | max:12000',
             'content' => 'required',
         ]);
         
