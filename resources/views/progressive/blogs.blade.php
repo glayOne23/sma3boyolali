@@ -13,9 +13,9 @@
             </header>
           
           <div class="portfolio">
-
-              @foreach ($blogs as $blog)
-            <div class="row filter-elements">
+            
+              <div class="row filter-elements">
+                    @foreach ($blogs as $blog)
 
                     <div class="row">
                         <div class="col-sm-12 col-md-4 bottom-padding">
@@ -32,13 +32,14 @@
 
                             <span class="label label-default">{{ date('d F Y', strtotime($blog->created_at) ) }} </span>
                             
-                            {!! \Illuminate\Support\Str::words($blog->content, 50,'....')  !!}
+                            {!! \Illuminate\Support\Str::words($blog->content, 30,'....')  !!}
+                            {{-- {{ \Illuminate\Support\Str::words($blog->content, 50,'....') }} --}}
                             <a href="/berita/{{$blog->id}}" style="color:blue">Baca selengkapnya</a>
 
                         </div>
                     </div>                
-                @endforeach
-              
+                     @endforeach
+                    
             </div>
           </div>
         </div>

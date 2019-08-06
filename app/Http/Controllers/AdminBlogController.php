@@ -13,11 +13,10 @@ class AdminBlogController extends Controller
         $blogs = Article::where('type','berita')->get();   
         return view('admin.blogs.index', compact('blogs'));
     }
-
     
     public function create()
     {
-        return view('admin.blogs.create');
+        return view('admin.blogs.create(tiny)');
     }
 
     
@@ -54,7 +53,7 @@ class AdminBlogController extends Controller
     
     public function edit(Article $blog)
     {
-        return view('admin.blogs.edit', compact('blog'));
+        return view('admin.blogs.edit(tiny)', compact('blog'));
     }
 
     

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Extracurricular extends Model
 {
-    protected $fillable = ['name', 'content'];
+    protected $fillable = ['name', 'content','type'];
 
     public function extracurricular_images(){
         return $this->HasMany('App\Models\ExtracurricularImage', 'extracurricular_id', 'id'); 

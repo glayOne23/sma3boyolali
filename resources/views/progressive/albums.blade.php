@@ -15,21 +15,25 @@
           <div class="portfolio">
 
             <div class="row filter-elements">
-                @foreach ($albums as $album)
-                    
-                    <div class="web-design col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                        <a href="/galeri/{{$album->id}}" class="work">
-                        <img class="replace-2x" src="/images/{{$album->cover}}" alt="{{$album->cover}}" style="width:370px;height:270px">
-                        <span class="shadow"></span>
-                        <div class="bg-hover"></div>
-                        <div class="work-title">
-                            <h3 class="title">{{$album->name}} </h3>
-                            <div class="description">Klik untuk melihat isi album</div>
+                <div class="row">
+                    @foreach ($albums as $album)
+                    <div class="col-lg-6">
+                        <div class="single-gallery">
+                            <div class="content">
+                                <a href="/galeri/{{$album->id}}">
+                                    <div class="content-overlay"></div>
+                                        <img class="content-image img-fluid d-block mx-auto rounded" src="/images/{{$album->cover}}" alt="{{$album->cover}}">
+                                    <div class="content-details fadeIn-bottom">
+                                    <h3 class="content-title mx-auto">{{$album->name}}</h3>
+                                    <a href="/galeri/{{$album->id}}" class="primary-btn text-uppercase mt-20">Klik untuk lihat Isi Album</a>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-                        </a>
                     </div>
+                    @endforeach
 
-                @endforeach
+                </div>
               
             </div>
           </div>

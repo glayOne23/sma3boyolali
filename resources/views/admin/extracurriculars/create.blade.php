@@ -1,12 +1,12 @@
 @extends('admin.layouts.layout')
 
-@section('title', 'Tambah Ekstrakurikuler')
+@section('title', 'Tambah Unit Kegiatan')
 
 @section('content')
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
           <div class="x_title">
-            <h4>Tambah Ekstrakurikuler</h4>
+            <h4>Tambah Unit Kegiatan</h4>
             <div class="clearfix"></div>
           </div>
           <div class="x_content">
@@ -17,14 +17,24 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 form-group">
                   
                   {{-- nama extracurricular --}}
-                  <label for="name">Nama Ekstrakurikuler</label>
+                  <label for="name">Nama Unit Kegiatan</label>
                   <input type="text" id="name" class="form-control {{$errors->has('name') ? 'border-red' : ''}}" name="name" placeholder="nama ekstrakurikuler...">
                     @if ($errors->has('name'))
                         <p style="color:red; margin-top:1em">{{$errors->first('name')}} </p>
                     @endif
+
+                    <label style="margin-top:2em;">Kategori Unit Kegiatan : </label>
+                    <p>
+                      <input type="radio" class="flat" name="type" value="organisasi" checked="" required /> 
+                      <span style="padding-right:1em;">Organisasi</span> 
+                      <input type="radio" class="flat" name="type" value="ekstrakurikuler"/>
+                      <span style="padding-right:1em;">Ekstrakurikuler</span> 
+                      <input type="radio" class="flat" name="type" value="osn"/>
+                      <span style="padding-right:1em;">OSN</span> 
+                    </p>
                   
                   {{-- deskripsi ekstrakurikuler   --}}
-                  <label for="name" style="margin-top:2em;">Deskripsi Ekstrakurikuler</label>  
+                  <label for="name" style="margin-top:2em;">Deskripsi Unit Kegiatan</label>  
                   <div class="btn-toolbar editor" data-role="editor-toolbar" data-target="#editor-one">
                     <div class="btn-group">
                       <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
@@ -94,7 +104,7 @@
                   {{-- end deskripsi ekstrakurikuler --}}
                     
                   {{-- photo extracurricular   --}}
-                  <label for="upload_image" style="margin-top:2em;">Foto Ekstrakurikuler</label> <br>
+                  <label for="upload_image" style="margin-top:2em;">Foto Ekstrakurikuler (Maksimal ukuran gambar 4 mb)</label> <br>
                   <img id="upload_image" style="max-width:9em; max-height:12em;padding-bottom:10px;">
                   <input type="file" onchange="show_image.call(this)" name="file">  
                     @if ($errors->has('file'))

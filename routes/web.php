@@ -17,7 +17,7 @@ Route::get('/berita/{blog}', 'BlogController@show');
 //sejarah
 Route::get('/sejarah', 'HistoryController@show');
 
-//berita
+//prestasi
 Route::get('/prestasi', 'AchievementController@index');
 Route::get('/prestasi/{achievement}', 'AchievementController@show');
 
@@ -26,6 +26,15 @@ Route::get('/ekstrakurikuler/{ekstrakurikuler}', 'ExtracurricularController@show
 
 //visi-misi
 Route::get('/visi-misi', 'VisionController@show');
+
+//guru
+Route::get('/guru', 'TeacherController@show');
+
+//alumni
+Route::get('/alumni', 'AlumniController@show');
+
+//link terkait
+Route::get('/link', 'LinkController@show');
 
 //admin
 Route::group(['middleware' =>'admin'], function(){
@@ -79,9 +88,15 @@ Route::group(['middleware' =>'admin'], function(){
     Route::resource('/admin/blogs','AdminBlogController');
     //Achievement
     Route::resource('/admin/achievements','AdminAchievementController');
+
+    //relatedlink
+    Route::resource('/admin/related_links','AdminRelatedLinkController');
     
     //interface for slideshow and headmaster
     Route::get('/home', 'HomeController@index')->name('home');
+
+    //upload data from articles
+    // Route::post('/upload', 'AdminUploadArticleContentController@store');
 });
 
 

@@ -23,7 +23,7 @@
                         <p style="color:red; margin-top:1em">{{$errors->first('name')}} </p>
                     @endif
                   
-                  <label for="upload_image" style="margin-top:2em;">Cover Album</label> <br>
+                  <label for="upload_image" style="margin-top:2em;">Cover Album (Maksimal ukuran gambar 4 mb)</label> <br>
                   <img src="/images/{{$album->cover}} " id="upload_image" style="max-width:9em; max-height:12em;padding-bottom:10px;">
                   <input type="file" onchange="show_image.call(this)" name="file">  
                     @if ($errors->has('file'))

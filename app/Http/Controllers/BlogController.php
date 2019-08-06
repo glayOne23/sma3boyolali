@@ -12,11 +12,13 @@ class BlogController extends Controller
     public function index(){
         $extracurriculars = Extracurricular::all();
         $blogs = Article::where('type', 'berita')->get();
-        return view('progressive.blogs',compact('blogs', 'extracurriculars') );
+        $news = Article::latest()->limit(4)->get();
+        return view('interior.blogs',compact('blogs', 'extracurriculars', 'news') );
     }
 
     public function show(Article $blog){
         $extracurriculars = Extracurricular::all();
-        return view('progressive.showblog',compact('blog', 'extracurriculars' ) );
+        $news = Article::latest()->limit(4)->get();
+        return view('interior.showblog',compact('blog', 'extracurriculars', 'news' ) );
     }
 }

@@ -13,7 +13,7 @@
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
-                <p>Drag gambar untuk mengupload</p>
+                <p>Drag gambar untuk mengupload (Maksimal ukuran gambar 4 mb)</p>
                 <form method="POST" action="/admin/slideshows" class="dropzone" id="dropzone" enctype="multipart/form-data">
                     @csrf    
                 {{-- <form method="POST" action="{{route('slideshows.store')}} " enctype="multipart/form-data">    

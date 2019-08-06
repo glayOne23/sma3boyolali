@@ -10,7 +10,7 @@
       segarkan=setTimeout("bergerak()",kecepatan);}bergerak();
   </script> --}}
   <meta name="keywords" content="SMAN 3 BOYOLALI">
-  <meta name="description" content="INI SMANYA DIAN DULU">
+  <meta name="description" content="SMAN 3 Boyolali">
   <meta name="author" content="">
   <meta class="viewport" name="viewport" content="">
   <meta http-equiv="X-UA-Compatible" content="">

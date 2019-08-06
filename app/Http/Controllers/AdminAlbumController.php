@@ -26,7 +26,7 @@ class AdminAlbumController extends Controller
     {
         $errors = $request->validate([
             'name' => 'required|unique:albums,name',
-            'file' => 'required | mimes:jpeg,jpg,png,svg | max:4096',
+            'file' => 'required | mimes:jpeg,jpg,png,svg | max:10000',
         ]);
         
         //change name and save image in public/images/

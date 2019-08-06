@@ -1,6 +1,6 @@
 @extends('admin.layouts.layout')
 
-@section('title', 'Berita')
+@section('title', 'Prestasi')
 
 @section('content')
 
@@ -24,7 +24,7 @@
                 <thead>
                   <tr class="headings">
                     <th class="column-title">No </th>
-                    <th class="column-title">Judul Berita</th>
+                    <th class="column-title">Judul Prestasi</th>
                     <th class="column-title">Photo</th>
                     <th class="column-title">Konfigurasi</th>
                   </tr>

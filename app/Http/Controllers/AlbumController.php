@@ -12,11 +12,11 @@ class AlbumController extends Controller
 
         $extracurriculars = Extracurricular::all();
         $albums = Album::all();
-        return view('progressive.albums',compact('albums', 'extracurriculars') );
+        return view('interior.albums',compact('albums', 'extracurriculars') );
     }
 
     public function show(Album $album){
         $extracurriculars = Extracurricular::all();
-        return view('progressive.albumimages', compact('album', 'extracurriculars') );
+        return view('interior.albumimages', compact('album', 'extracurriculars') );
     }
 }

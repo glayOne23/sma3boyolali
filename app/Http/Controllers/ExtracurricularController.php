@@ -9,6 +9,6 @@ class ExtracurricularController extends Controller
 {
     public function show(Extracurricular $ekstrakurikuler){
         $extracurriculars = Extracurricular::all();
-        return view('progressive.showextracurricular',compact('ekstrakurikuler', 'extracurriculars') );
+        return view('interior.showextracurricular',compact('ekstrakurikuler', 'extracurriculars') );
     }
 }

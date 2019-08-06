@@ -58,7 +58,7 @@ Selamat Datang di SMAN 3 Boyolali
                 </div>
             <div class="images-box col-sm-6 col-md-6">
                 <div class="frame frame-shadow-lifted rotated-right-box">
-                    <img class="replace-2x" src="/images/2019-05-05_23:07:31_1080p-HD-Image-Nature.jpg" width="568" height="351" alt="" style="width:568;height:351">
+                    <img class="replace-2x" src="/images/sejarah.JPG" width="568" height="351" alt="" style="width:568;height:351">
                 </div>    
             </div>
             </div>
@@ -84,13 +84,13 @@ Selamat Datang di SMAN 3 Boyolali
     </div><!-- .full-width-box -->    
  
     <div class="full-width-box bottom-padding cm-padding-bottom-36">
-	  <div class="fwb-bg fwb-paralax" data-speed="2" style="background-image: url('/images/bg2.jpg');"><div class="overlay"></div></div>
+	  <div class="fwb-bg fwb-paralax" data-speed="2" style="background-image: url('/images/bg3.jpg');"><div class="overlay"></div></div>
 	  
 	  <div class="container">
 		<div class="portfolio">
 
             <div class="title-box">
-                <h1 class="title no-top-padding" style="color:white;">Galeri Terbaru</h1>
+                <h1 class=s"title no-top-padding" style="color:white;">Galeri Terbaru</h1>
             </div>
 		  
 		    <div class="clearfix"></div>

@@ -17,7 +17,7 @@ class AdminAchievementController extends Controller
     
     public function create()
     {
-        return view('admin.achievements.create');
+        return view('admin.achievements.create(tiny)');
     }
 
     
@@ -54,7 +54,7 @@ class AdminAchievementController extends Controller
     
     public function edit(Article $achievement)
     {
-        return view('admin.achievements.edit', compact('achievement'));
+        return view('admin.achievements.edit(tiny)', compact('achievement'));
     }
 
     

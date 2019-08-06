@@ -47,6 +47,8 @@
             </li>
             
             <li><a href="/admin/albums"><i class="fa fa-book"></i>Album</a></li>
+
+            <li><a href="/admin/related_links"><i class="fa fa-link"></i>Link Website</a></li>
             
           </ul>
         </div>

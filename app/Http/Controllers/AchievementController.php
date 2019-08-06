@@ -11,11 +11,13 @@ class AchievementController extends Controller
     public function index(){
         $extracurriculars = Extracurricular::all();
         $achievements = Article::where('type', 'prestasi')->get();
-        return view('progressive.achievements',compact('achievements', 'extracurriculars') );
+        $news = Article::latest()->limit(4)->get();
+        return view('interior.achievements',compact('achievements', 'extracurriculars', 'news') );
     }
 
     public function show(Article $achievement){
         $extracurriculars = Extracurricular::all();
-        return view('progressive.showachievement',compact('achievement', 'extracurriculars' ) );
+        $news = Article::latest()->limit(4)->get();
+        return view('interior.showachievement',compact('achievement', 'extracurriculars', 'news' ) );
     }
 }

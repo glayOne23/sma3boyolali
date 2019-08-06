@@ -11,14 +11,14 @@ class AdminExtracurricularController extends Controller
     
     public function index()
     {
-        $extracurriculars = Extracurricular::all();
+        $extracurriculars = Extracurricular::orderBy('name')->get(); 
         return view('admin.extracurriculars.index', compact('extracurriculars'));
     }
 
     
     public function create()
     {
-        return view('admin.extracurriculars.create');
+        return view('admin.extracurriculars.create(tiny)');
     }
 
     
@@ -27,6 +27,7 @@ class AdminExtracurricularController extends Controller
         $errors = $request->validate([
             'name' => 'required|unique:extracurriculars,name',
             'content' => 'required',
+            'type' => 'required',
             'file' => 'required | mimes:jpeg,jpg,png,svg | max:4096',
         ]);
 
@@ -39,6 +40,7 @@ class AdminExtracurricularController extends Controller
         $extracurricular = Extracurricular::create([
             'name' => request('name'),
             'content' => request('content'),
+            'type' => request('type'),
 
         ]);
 
@@ -61,7 +63,7 @@ class AdminExtracurricularController extends Controller
     
     public function edit(Extracurricular $extracurricular)
     {
-        return view('admin.extracurriculars.edit', compact('extracurricular') );
+        return view('admin.extracurriculars.edit(tiny)', compact('extracurricular') );
     }
 
     
@@ -89,6 +91,7 @@ class AdminExtracurricularController extends Controller
         $extracurricular->update([
             'name' => request('name'),
             'content' => request('content'),
+            'type' => request('type'),
         ]);
 
         return redirect('admin/extracurriculars');

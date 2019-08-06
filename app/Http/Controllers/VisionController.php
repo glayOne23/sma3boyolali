@@ -12,6 +12,6 @@ class VisionController extends Controller
         $extracurriculars = Extracurricular::all();
         $vision = Vision::first();
 
-        return view('progressive.vision',compact('extracurriculars', 'vision') );
+        return view('interior.vision',compact('extracurriculars', 'vision') );
     }
 }

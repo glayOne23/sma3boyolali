@@ -32,7 +32,8 @@
 
                             <span class="label label-default">{{ date('d F Y', strtotime($achievement->created_at) ) }} </span>
                             <br>
-                            {!! \Illuminate\Support\Str::words($achievement->content, 50,'....')  !!}
+                            {!! \Illuminate\Support\Str::words($achievement->content, 40,'....')  !!}
+                            {{-- {{ \Illuminate\Support\Str::words($achievement->content, 50,'....')  }} --}}
                             <a href="/berita/{{$achievement->id}}" style="color:blue">Baca selengkapnya</a>
 
                         </div>

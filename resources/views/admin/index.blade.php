@@ -79,7 +79,7 @@
               @csrf
               @method('PUT')
 
-              <p>Ubah Foto Kepala Sekolah</p>
+              <p>Ubah Foto Kepala Sekolah (Maksimal ukuran gambar 4 mb)</p>
               <img src="images/{{$kepsek->name}}" alt="foto kepala sekolah" id="upload_image" style="max-width:9em; max-height:12em;padding-bottom:10px;">
               @if ($errors->has('file'))
                   <p style="color:red">{{$errors->first('file')}} </p>

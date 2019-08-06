@@ -11,6 +11,6 @@ class HistoryController extends Controller
     public function show(){
         $extracurriculars = Extracurricular::all();
         $history = Home::where('name', 'Sejarah')->first();
-        return view('progressive.showhistory',compact('history', 'extracurriculars') );
+        return view('interior.showhistory',compact('history', 'extracurriculars') );
     }
 }

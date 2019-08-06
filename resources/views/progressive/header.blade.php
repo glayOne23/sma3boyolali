@@ -5,7 +5,7 @@
           <div class="col-xs-6 col-md-2 col-lg-3 logo-box">
             <div class="logo">
               <a href="/">
-                <img src="/progressive/img/logosmagaboy2.png" class="logo-img" alt="" style="max-width:7em; padding:1em;">
+                <img src="/progressive/img/logosmagaboy2.png" class="logo-img" alt="" style="max-width:6em; padding:1em;">
               </a>
             </div>
           </div><!-- .logo-box -->
@@ -31,8 +31,8 @@
                             <ul class="sub" >
                                 <li><a href="/sejarah">Sejarah</a></li>
                                 <li><a href="/visi-misi">Visi Misi</a></li>
-                                <li><a href="/profil">Profil Guru</a></li>
-                                <li><a href="/sarpras">Sarana Prasarana</a></li>
+                                <li><a href="/guru">Profil Guru</a></li>
+                                {{-- <li><a href="/sarpras">Sarana Prasarana</a></li> --}}
                             </ul>
                         </li>
                         
@@ -41,49 +41,31 @@
                         <li class="parent">
                           <a >Unit Kegiatan</a>
                           <ul class="sub">
-                            
+
                           <li class="parent">
                             <a>Organisasi</a>
                             <ul class="sub">
-                            <li><a href="#">MPK</a></li>
-                            <li><a href="#">OSIS</a></li>
-                            <li><a href="#">ROHIS</a></li>
-                            <li><a href="#">PERSIKA</a></li>
-                            <li><a href="#">PMR</a></li>
-                            <li><a href="#">PKS</a></li>
-                              <li><a href="#">PASKRIBRA</a></li>
+                              @foreach ($extracurriculars->where('type','organisasi') as $organisasi)										
+                                <li><a href="/ekstrakurikuler/{{$organisasi->id}}">{{$organisasi->name}}</a></li>            
+                              @endforeach                                  
                             </ul>
                           </li>
 
                           <li class="parent">
                             <a>Ekstrakurikuler</a>
                             <ul class="sub">
-                            <li><a href="#">KIR</a></li>
-                            <li><a href="#">English Club</a></li>
-                            <li><a href="#">Jepang Club</a></li>
-                            <li><a href="#">Seni Rupa</a></li>
-                            <li><a href="#">Seni Tari</a></li>
-                            <li><a href="#">Teater</a></li>
-                            <li><a href="#">Wushu</a></li>
-                            <li><a href="#">Basket</a></li>
-                            <li><a href="#">Volley</a></li>
-                            <li><a href="#">Futsal</a></li>
-                            <li><a href="#">BRM Lanjutan</a></li>
-                            <li><a href="#">Paduan Suara</a></li>
-                            <li><a href="#">Jurnalistik</a></li>
+                                @foreach ($extracurriculars->where('type','ekstrakurikuler') as $ekstrakurikuler)										
+                                <li><a href="/ekstrakurikuler/{{$ekstrakurikuler->id}}">{{$ekstrakurikuler->name}}</a></li>            
+                                @endforeach                                  
                             </ul>
                           </li>
 
                           <li class="parent">
                             <a>OSN</a>
                             <ul class="sub">
-                            <li><a href="#">Kimia</a></li>
-                            <li><a href="#">Biologi</a></li>
-                            <li><a href="#">Matematika</a></li>
-                            <li><a href="#">TIK</a></li>
-                            <li><a href="#">Astronomi</a></li>
-                            <li><a href="#">Ekonomi</a></li>
-                            <li><a href="#">Geografi</a></li>
+                                @foreach ($extracurriculars->where('type','osn') as $osn)										
+                                <li><a href="/ekstrakurikuler/{{$osn->id}}">{{$osn->name}}</a></li>            
+                              @endforeach                                  
                             </ul>
                           </li>
                           </ul>
@@ -92,6 +74,10 @@
                         <li><a class="parent" href="/galeri">Galeri</a></li>
     
                         <li><a href="/berita" class="parent">Berita</a></li>
+
+                        <li><a href="/link" class="parent">Link Terkait</a></li>
+
+                        {{-- <li><a href="/alumni" class="parent">Alumni</a></li> --}}
 
                         <li class="item-danger item-bg text-danger"><a href="https://jateng.siap-ppdb.com/" target="_blank">PPDB</a></li>
 

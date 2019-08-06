@@ -24,7 +24,8 @@
                 <thead>
                   <tr class="headings">
                     <th class="column-title">No </th>
-                    <th class="column-title">Nama Extrakurikuler</th>
+                    <th class="column-title">Nama Unit Kegiatan</th>
+                    <th class="column-title">Kategori</th>
                     <th class="column-title">Preview Photo</th>
                     <th class="column-title">Konfigurasi</th>
                   </tr>
@@ -35,6 +36,7 @@
                     <tr class="even pointer">
                         <td class=" "> {{$no + 1}} </td>
                         <td class=" ">{{$extracurricular->name}} </td>
+                        <td class=" ">{{$extracurricular->type}} </td>
                         <td class="">
                           {{-- extracurricular images --}}
                           @foreach ($extracurricular->extracurricular_images as $extracurricular_image)
