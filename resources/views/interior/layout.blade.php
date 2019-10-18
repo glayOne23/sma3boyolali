@@ -33,14 +33,14 @@
         <style>
             .banner-area{background:url(@yield('bgutama'));background-size:cover}
             .callto-action-wrap{
-                background:-webkit-linear-gradient(rgba(0,0,0,0.7), 
-                rgba(0,0,0,0.7)),
+                background:-webkit-linear-gradient(rgba(0,0,0,0.0), 
+                rgba(0,0,0,0.0)),
                 url(@yield('bgkepsek')) center;
-                background:-o-linear-gradient(rgba(0,0,0,0.7), 
-                rgba(0,0,0,0.7)),
+                background:-o-linear-gradient(rgba(0,0,0,0.0), 
+                rgba(0,0,0,0.0)),
                 url(@yield('bgkepsek')) center;
-                background:linear-gradient(rgba(0,0,0,0.7), 
-                rgba(0,0,0,0.7)),url(@yield('bgkepsek')) center;
+                background:linear-gradient(rgba(0,0,0,0.0), 
+                rgba(0,0,0,0.0)),url(@yield('bgkepsek')) center;
                 background-size:cover;border-radius:10px;
                 text-align:center;
                 color:#fff}

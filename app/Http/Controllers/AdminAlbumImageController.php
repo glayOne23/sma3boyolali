@@ -21,7 +21,7 @@ class AdminAlbumImageController extends Controller
     {
         // dd($album->name);
         $image = $request->file('file');
-        $ldate = date('Y-m-d_H:i:s');
+        $ldate = date('Y-m-d_H_i_s');
         $imageName = $ldate.'_'.$image->getClientOriginalName();
         $image->move(public_path('images'),$imageName);
      

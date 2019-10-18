@@ -11,6 +11,7 @@
           <div class="x_title">
 
             <h4>Slideshow Halaman Utama</h4>
+            <p style="color:orange">Untuk mengganti slideshow, hapus gambar slideshow yang ada kemudian tambah gambar baru</p>
             <div class="clearfix"></div>
           </div>
           <div class="x_content">

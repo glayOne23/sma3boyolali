@@ -46,7 +46,7 @@ class AdminUserController extends Controller
         if ($request->file('file') != null) {
             //change name and save image in public/images/
             $image = $request->file('file');
-            $ldate = date('Y-m-d_H:i:s');
+            $ldate = date('Y-m-d_H_i_s');
             $imageName = $ldate.'_'.$image->getClientOriginalName();
             $image->move(public_path('images'),$imageName);
             
@@ -93,7 +93,7 @@ class AdminUserController extends Controller
         if ($request->file('file') != null) {
             //change name and upload new image
             $image = $request->file('file');
-            $ldate = date('Y-m-d_H:i:s');
+            $ldate = date('Y-m-d_H_i_s');
             $imageName = $ldate.'_'.$image->getClientOriginalName();
             $image->move(public_path('images'),$imageName);
 

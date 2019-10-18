@@ -66,19 +66,19 @@ Selamat Datang di SMAN 3 Boyolali
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="callto-action-wrap col-lg-12 relative section-gap">
-                            <div class="content">
+                            <div class="content text-left" style="padding-left:5%"> 
                                 <h1>
                                     Sambutan Kepala Sekolah
                                     
                                     <br/>
                                     <br/>
                                 </h1>
-                                <p class="mx-auto">
-                                    {{$kepsek->content}}
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                </p>
+                                    <p>
+                                        {{$kepsek->content}}
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                    </p>
                                 {{-- <a href="#" class="primary-btn text-uppercase">Request quote now</a>			 --}}
                             </div>							
                         </div>

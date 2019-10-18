@@ -12,7 +12,7 @@
                 <ul>
                     <li><a href="/sejarah">Sejarah</a></li>
                     <li><a href="/visi-misi">Visi Misi</a></li>
-                    <li><a href="/guru">Profil Guru</a></li>
+                    {{-- <li><a href="/guru">Profil Guru</a></li> --}}
                     {{-- <li><a href="/sarpras">Sarana Prasarana</a></li> --}}
                 </ul>
               </li>	
